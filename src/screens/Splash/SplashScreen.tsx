@@ -9,11 +9,11 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Splash'>;
 
 export function SplashScreen({ navigation }: Props): React.JSX.Element {
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timeout = setTimeout(() => {
       navigation.reset({ index: 0, routes: [{ name: 'Home' }] });
     }, 3000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timeout);
   }, [navigation]);
 
   return (
