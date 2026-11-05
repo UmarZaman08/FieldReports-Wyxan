@@ -71,7 +71,13 @@ export function HomeScreen({ navigation }: Props): React.JSX.Element {
       <View style={styles.header}>
         <Text style={styles.greeting}>Hello,{'\n'}Field Inspector 👋</Text>
         <Text style={styles.network}>
-          {online ? 'Online' : 'Offline'}
+          <View
+            style={[
+              styles.connectionDot,
+              online ? styles.onlineDot : styles.offlineDot,
+            ]}
+          />
+          {online ? ' Online' : ' Offline'}
           {'\n'}Saved on device
         </Text>
       </View>
@@ -178,6 +184,9 @@ const styles = StyleSheet.create({
     fontSize: 11,
     lineHeight: 18,
   },
+  connectionDot: { width: 5, height: 5, borderRadius: 4 },
+  onlineDot: { backgroundColor: theme.colors.success },
+  offlineDot: { backgroundColor: theme.colors.warning },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginBottom: 22 },
   stat: {
     flexGrow: 1,

@@ -55,7 +55,7 @@ export function AppNavigator(): React.JSX.Element {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{ title: 'Field Reports', headerShown: false }}
+            options={{ title: 'Field Reports', headerShown: false,statusBarStyle: 'dark' }}
           />
           <Stack.Screen
             name="Drafts"
@@ -141,12 +141,18 @@ export function AppNavigator(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: { flex: 1, backgroundColor:theme.colors.background },
   bottom: {
     backgroundColor: theme.colors.surface,
-    borderTopLeftRadius: 28,
-    borderTopRightRadius: 28,
+    // borderTopLeftRadius: 28,
+    // borderTopRightRadius: 28,
+    borderRadius:25,
     ...theme.shadow,
+    marginBottom:15,
+    width:'95%',
+    alignSelf:'center',
+    borderWidth:0.1,
+    alignContent:'center'
   },
   tabs: { flexDirection: 'row', padding: 8, gap: 5 },
   tab: {
